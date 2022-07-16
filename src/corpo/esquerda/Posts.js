@@ -8,14 +8,16 @@ export default function Posts() {
             userName: "meowed",
             image: "assets/img/gato-telefone.svg",
             userLikedPhoto: "assets/img/respondeai.svg",
-            likedText: "Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>"
+            userLikedName: "respondeai",
+            likes: "101.523"
         },
         {
             userPhoto: "assets/img/barked.svg",
             userName: "barked",
             image: "assets/img/dog.svg",
             userLikedPhoto: "assets/img/adorable_animals.svg",
-            likedText: "Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>"
+            userLikedName: "adorable_animals",
+            likes: "99.159"
         }
     ]
 
@@ -23,7 +25,7 @@ export default function Posts() {
         <div class="posts">
             {
                 posts.map(post => (
-                    <Post userPhoto={post.userPhoto} userName={post.userName} image={post.image} userLikedPhoto={post.userLikedPhoto} likedText={post.likedText} />
+                    <Post userPhoto={post.userPhoto} userName={post.userName} image={post.image} userLikedPhoto={post.userLikedPhoto} userLikedName={post.userLikedName} likes={post.likes} />
                 ))
             }
         </div>

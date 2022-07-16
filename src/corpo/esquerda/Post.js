@@ -1,6 +1,14 @@
 import React from 'react'
 
 export default function Post(props) {
+    const [like, setLike] = React.useState("heart-outline");
+    const [color, setColor] = React.useState("");
+
+    function likePost () {
+        setLike("heart");
+        setColor("md hydrated red");
+    }
+    
     return (
         <div class="post">
             <div class="topo">
@@ -14,13 +22,13 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.image} />
+                <img src={props.image} onClick={likePost} />
             </div>
 
             <div class="fundo">
                 <div class="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon class={color} name={like} onClick={likePost}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
@@ -32,7 +40,7 @@ export default function Post(props) {
                 <div class="curtidas">
                     <img src={props.userLikedPhoto} />
                     <div class="texto">
-                        {props.likedText}
+                        Curtido por <strong>{props.userLikedName}</strong> e outras <strong>{props.likes}</strong>
                     </div>
                 </div>
             </div>

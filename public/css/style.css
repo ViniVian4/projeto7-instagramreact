@@ -11,6 +11,14 @@ body {
   font-size: 14px;
 }
 
+.red {
+  color: red;
+}
+
+.black {
+  color: black;
+}
+
 .navbar {
   width: 100%;
   display: flex;
