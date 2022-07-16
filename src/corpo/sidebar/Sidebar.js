@@ -5,7 +5,7 @@ import User from "./User"
 export default function Sidebar() {
     return (
         <div class="sidebar">
-            <User />
+            <User userPhoto="assets/img/catanacomics.svg" userName="catanacomics" name="Catana" />
             <Sugestions />
 
             <div class="links">
