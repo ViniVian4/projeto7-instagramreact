@@ -5,8 +5,14 @@ export default function Post(props) {
     const [color, setColor] = React.useState("");
 
     function likePost () {
-        setLike("heart");
-        setColor("md hydrated red");
+        if (like == "heart-outline"){
+            setLike("heart");
+            setColor("md hydrated red");
+        }
+        else {
+            setLike("heart-outline");
+            setColor("md hydrated");
+        }
     }
     
     return (
@@ -22,7 +28,7 @@ export default function Post(props) {
             </div>
 
             <div class="conteudo">
-                <img src={props.image} onClick={likePost} />
+                <img src={props.image} onClick={() => {setLike("heart"); setColor("md hydrated red");}} />
             </div>
 
             <div class="fundo">
